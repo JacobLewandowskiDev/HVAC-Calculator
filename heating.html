@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Heating calculator</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="HVAC Calculator">
+    <meta name="keywords" content="Jacob, Lewandowski, HVAC, Calculator, engineering, Engineer, Heating, Water supply, Water, Gas, AC, Air conditioning">
+    <meta name="author" content="Jacob Lewandowski">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@300&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" 
+    integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link rel="icon" href="images/hvac_calculator_logo_white.png">
+</head>
+<body>
+    <nav>   <!-- Navigation bar section - Start -->
+        <!-- Logo and app name -->
+        <div id="logo">
+            <a href="index.html"><img src="images/hvac_calculator_logo_white.png" id="logo-image"></a>
+            <a href="index.html" id="logo-text">HVAC Calculator</a>
+        </div>
+
+        <!-- Mobile menu burger bars -->
+        <div id="mobile-menu">
+            <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+        </div>
+        
+        <!-- Navigation bar links -->
+        <ul id="nav-links">
+
+            <!-- Close mobile menu button -->
+            <li id="mobile-close">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </li>
+
+            <li>
+                <a href="heating.html">Heating</a>
+            </li>
+
+            <li>
+                <a href="water_supply.html">Water supply</a>
+            </li>
+
+            <li>
+                <a href="gas.html">Gas</a>
+            </li>
+
+            <li>
+                <a href="ventilation.html">Air conditioning</a>
+            </li>
+        </ul>
+    </nav> <!-- Navigation bar section - End -->
+
+    <main> <!-- Main Section - Start -->
+
+        <!-- Main section welcoming text -->
+        <h1>Heating calculator</h1>
+
+        <!-- Welcome sign image, stop animation -->
+        <div id="welcome-sign" style="background-image:url('images/raw_images/ogrzewnictwo.jpg'); animation: none;"> 
+            <img src="images/raw_images/ogrzewnictwo.jpg" style="display: none;"> 
+        </div> 
+
+        <!-- Calculation form container -->
+        <div id="container">
+            <!-- First calculation form - heat pipe diameters -->
+            <h4>Automatic selection of heat pipe diameters</h4>
+
+            <div class="round-ducts">
+                <form name="heat-pipes-calculations-1">
+                    <p>Please select and enter the required data:</p>
+                    <div class="field">
+                        <!-- Pipe type selection -->
+                        <div class="input-field">
+                            <p>Pipe type - absolute roughness</p> 
+                            <select id="heat-pipes" name="heat-pipes" onchange="heatRoughnessCalcDrop()">
+                                <option selected value="0.15">Steel pipes k = 0,15 [mm]</option>
+                                <option value="0.1">Steel pipes k = 0,10 [mm]</option>
+                                <option value="0.007001">PP pipes PN20 k = 0,007 [mm]</option>
+                                <option value="0.007002">PEX pipes k = 0,007 [mm]</option>      
+                                <option value="0.25">Cast Iron pipes (new) k = 0,25 [mm]</option>                                                          
+                            </select>
+                        </div>
+        
+                        <!-- Temperature difference input-->
+                        <div class="input-field">
+                            <p>Temp.(0-100) [°C]</p> 
+                            <input type="number" name="heat-temperature" min="0" max="100" value="80" id="heat-temperature" onclick="this.select()" onkeyup="temperatureCalcDrop()">
+                        </div>
+                    </div>
+                </form>
+            </div>
+    
+            <!-- Second calculation form - heat pipe diameter based on power and temp. -->
+            <h4>Diamater calculation based on heating unit power and temperature difference. </h4>
+            <div class="round-ducts">
+                <form name="heat-pipes-calculations-2">
+
+                    <p>Please enter your heating units power and temperatures below:</p>
+                    <div class="field">
+    
+                        <!-- Power input field -->
+                        <div class="input-field">
+                            <p>Power [kW]</p>
+                            <input type="number" name="heat-power" id="heat-power"  onclick="this.select()" onkeyup="heatPowerCalculation()">
+                        </div>
+        
+                        <!-- Temperature difference input -->
+                        <div class="input-field">
+                            <p>Temp. difference [°C]</p> 
+                            <input type="number" name="temperature-difference" value="20" id="temperature-difference"  onclick="this.select()" onkeyup="heatPowerCalculation()">
+                        </div>
+
+                        <!-- Fluid type selection -->
+                        <div class="input-field">
+                            <p>Fluid type</p> 
+                            <select name="fluids" id="heat-fluid" onchange="heatFluidCalculation()">
+                                <option selected value="4.2">Water</option>
+                                <option value="3.63">Ethyl. glycol 35% (-20 °C)</option>
+                                <option value="3.54">Ethyl. glycol 40% (-25 °C)</option>
+                                <option value="3.77">Prop. glycol 37% (-20 °C)</option>
+                                <option value="3.7">Prop. glycol 42% (-25 °C)</option>                                
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+    
+            <!-- Third calculation form - heat pipe diameter based on fluid flow -->
+            <h4>Diamater calculation based on fluid flow.</h4>
+
+            <div class="round-ducts">
+                <form name="heat-pipes-calculations-3">
+
+                    <p>Please enter your calculated water flow below:</p>
+                    <div class="field">
+                        <!-- Water flow input m3/h -->
+                        <div class="input-field">
+                            <p>Water flow [m<sup>3</sup>/h]</p>
+                            <input type="number" name="heat-hourly-flow" id="heat-hourly-flow"  onclick="this.select()" onkeyup="resultsBasedOnHourlyHeatFlow()">
+                        </div>
+        
+                        <div class="input-field">
+                            <p>Water flow [dm<sup>3</sup>/s]</p> 
+                            <input type="number" name="heat-seconds-flow" id="heat-seconds-flow"  onclick="this.select()" onkeyup="resultsBasedOnSecondsHeatFlow()">
+                        </div>
+                    </div>
+                </form>
+                <div id="pre-heat-results">
+
+                </div>
+                
+                <div id="heat-results">
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="javascript.js"></script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Water supply calculator</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="HVAC Calculator">
+    <meta name="keywords" content="Jacob, Lewandowski, HVAC, Calculator, engineering, Engineer, Heating, Water supply, Water, Gas, AC, Air conditioning">
+    <meta name="author" content="Jacob Lewandowski">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@300&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" 
+    integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link rel="icon" href="images/hvac_calculator_logo_white.png">
+</head>
+<body>
+    <nav>   <!-- Navigation bar section - Start -->
+        <!-- Logo and app name -->
+        <div id="logo">
+            <a href="index.html"><img src="images/hvac_calculator_logo_white.png" id="logo-image"></a>
+            <a href="index.html" id="logo-text">HVAC Calculator</a>
+        </div>
+
+        <!-- Mobile menu burger bars -->
+        <div id="mobile-menu">
+            <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+        </div>
+        
+        <!-- Navigation bar links -->
+        <ul id="nav-links">
+
+            <!-- Close mobile menu button -->
+            <li id="mobile-close">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </li>
+
+            <li>
+                <a href="heating.html">Heating</a>
+            </li>
+
+            <li>
+                <a href="#">Water supply</a>
+            </li>
+
+            <li>
+                <a href="gas.html">Gas</a>
+            </li>
+
+            <li>
+                <a href="ventilation.html">Air conditioning</a>
+            </li>
+        </ul>
+    </nav> <!-- Navigation bar section - End -->
+
+    <main> <!-- Main Section - Start -->
+
+        <!-- Main section welcoming text -->
+        <h1>Water supply calculator</h1>
+
+        <!-- Welcome sign image, stop animation -->
+        <div id="welcome-sign" style="background-image:url('images/raw_images/instalacja_wody2.jpg'); animation: none;">
+            <img src="images/raw_images/instalacja_wody2.jpg" style="display: none;"> <!-- Preload images to avoid flickering-->
+        </div> 
+
+        <!-- Calculation form container -->
+        <div id="container">
+            <!-- First calculation form - water pipe diameters - applianaces -->
+            <h4>Automatic selection of water pipe diameters</h4>
+            <div class="round-ducts">
+                <form name="water-pipes-calculations-1">
+                    <p>Please enter the number of your water appliances below:</p>
+                    <div id="appliance-grid">
+                        
+                        <!-- Number of sinks -->
+                        <div class="input-field">
+                            <p>Sinks</p> 
+                            <input type="number" name="sink" min="0" value="0" id="sink" onclick="this.select()" onkeyup="calcQ()">
+                        </div>
+
+                        <!-- Number of kitchen sinks -->
+                        <div class="input-field">
+                            <p>Kitchen sinks</p> 
+                            <input type="number" name="kitchen-sink" min="0" value="0" id="kitchen-sink" onclick="this.select()" onkeyup="calcQ()">
+                        </div>
+
+                        <!-- Number of toilets -->
+                        <div class="input-field">
+                            <p>Toilets</p> 
+                            <input type="number" name="toilet" min="0" value="0" id="toilet" onclick="this.select()" onkeyup="calcQ()">
+                        </div>
+
+                        <!-- Number of bathtubs -->
+                        <div class="input-field">
+                            <p>Bathtubs</p> 
+                            <input type="number" name="bathtub" min="0" value="0" id="bathtub" onclick="this.select()" onkeyup="calcQ()">
+                        </div>
+        
+                        <!-- Number of showers -->
+                        <div class="input-field">
+                            <p>Showers</p> 
+                            <input type="number" name="shower" min="0" value="0" id="shower" onclick="this.select()" onkeyup="calcQ()">
+                        </div>
+
+                        <!-- Number of washing machines -->
+                        <div class="input-field">
+                            <p>Washing <br> machines</p> 
+                            <input type="number" name="wash-machine" min="0" value="0" id="wash-machine" onclick="this.select()" onkeyup="calcQ()">
+                        </div>
+
+                        <!-- Number of dishwashers -->
+                        <div class="input-field">
+                            <p>Dishwashers</p> 
+                            <input type="number" name="dishwasher" min="0" value="0" id="dishwasher" onclick="this.select()" onkeyup="calcQ()">
+                        </div>
+
+                        <!-- Number of urinals -->
+                        <div class="input-field">
+                            <p>Urinals</p> 
+                            <input type="number" name="urinal" min="0" value="0" id="urinal" onclick="this.select()" onkeyup="calcQ()">
+                        </div>    
+                    </div>
+                </form>
+                             <!-- Results and Total appliances water flow calculation and pipe diameter selection -->
+             <div id="appliance-result">
+                <!-- Total water flow calculation -->
+                <p>Σqn= <span id="qn-result">0.0</span> [l/s]</p>
+
+                <!-- Total calculative water flow calculation -->
+                <p>Q<sub>calc</sub> = <span id="qcalc-result">0.0</span> [l/s]</p>
+                <p>Q<sub>calc</sub> = <span id="qcalc-m3/h-result">0.0</span> [m<sup>3</sup>/h]</p>
+
+                <!-- Pipe diamater result based on calculations above -->
+                <p id="water-pipe-diameter-result">Pipe diameter</p>
+ 
+                <!-- Water flow speed based on calculations above -->
+                <p>Speed= <span id="water-speed-result"> 0.0</span> [m/s] </p>
+            </div>
+            </div>
+    
+            <!-- Second calculation form - addition to first form - building type, pipe type and speed cryterion -->
+            <h4>Object information: Building type, type of pipes and speed cryterion </h4>
+            <div class="round-ducts">
+                <form name="water-pipes-calculations-2">
+                    <p>Please enter the data that fits your project best:</p>
+                    <div class="field">
+                
+                        <!-- Building type selection-->
+                        <div class="input-field">
+                            <p>Building type</p> 
+                            <select id="buildings" name="buildings" onchange="calcQ()">
+                                <option value="housing">Housing building</option>
+                                <option value="admin-office">Administration and office buildings</option>
+                                <option value="hotel">Hotels</option>
+                                <option value="department">Department stores</option> 
+                                <option value="hospital">Hospitals</option>
+                                <option value="school">Schools</option>  
+                            </select>
+                        </div>
+
+                        <!-- Pipe type selection-->
+                        <div class="input-field">
+                            <p>Pipe type</p> 
+                            <select id="water-pipes" name="water-pipes" onchange="calcQ()">
+                                <option value="steel">Steel pipes</option>
+                                <option value="pp">PP pipes</option>
+                                <option value="pex">PEX-pipes</option>                        
+                            </select>
+                        </div>
+
+                        <!-- Water speed cryterion -->
+                        <div class="input-field">
+                            <p>Speed cryterion [m/s]</p>
+                            <input type="number" id="speed-cryterion" name="speed-cryterion" min="1" max="1.5" value="1.5" onclick="this.select()"  onchange="calcQ()">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <!-- Javascript section -->
+    <script src="javascript.js"></script>
+</body>
+</html>

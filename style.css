@@ -1,0 +1,519 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Change scroll to smooth */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Background */
+body {
+    background-color: #ffffff;
+    width: 100vw;
+    height: calc(100vh - 100px);
+}
+
+/* Main section */
+main {
+    width: 80%;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    overflow-y: hidden;
+    font-family: 'Trispace', sans-serif;
+}
+
+ /* Navigation section - Start */
+nav {      
+    position: fixed;
+    background-color: #000000;
+    width: 100vw;
+    height: 60px;
+    top: 0;
+    font-size: 22px;
+    -webkit-box-shadow: 0px 2px 5px 0px #000000; 
+    box-shadow: 0px 2px 5px 0px #000000;
+    z-index: 1000;
+}
+
+nav ul {
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-right: 10px;
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 17px;
+}   
+/* Navigation section - End */    
+
+h1 {
+    font-size: 200%;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 70%;
+    margin: 0 auto;
+    text-shadow: 4px 4px 6px rgba(66, 68, 90, 1);
+}
+
+h3 {
+    font-size: 20px;
+    width: 70%;
+    margin: 0 auto;
+    text-shadow: 4px 4px 6px rgba(66, 68, 90, 1);
+}
+
+
+/* Id's - Start */
+/* Logo text and image positioning */
+#logo {            
+    display: flex;
+    position: absolute;
+    align-items: center;
+    font-size: 30px;
+    height: 60px;
+    padding: 17px 0;
+    margin-left: 2%;
+}
+
+/* Logo text changes */
+#logo a {           
+    text-decoration: none;
+}
+
+/* Logo image changes */
+#logo-image {       
+    display: block;
+    float: left;
+    width: 50px;
+    cursor: pointer;
+}
+
+/* Main images size, and positioning*/
+#welcome-sign {     
+    position: absolute;
+    display: flex;
+    height: 60vh;
+    width: 80%;
+    top: 55px;
+    align-items: center;
+    justify-content: center;
+    background-image: url("images/raw_images/klimatyzacja.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 0 8px 8px white inset;
+    opacity: .5;
+    z-index: -100;
+    transition: 1s;
+    animation: 50s swapImages infinite ease-in-out;
+}
+
+/* Select specialtization section */
+#select-speciality {    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 14% 0 0 0;
+}
+
+/* Specialization box */
+#select-speciality .spec-box {     
+    width: 260px;
+    height: 320px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    -webkit-box-shadow: 0px 2px 3px 1px #000000; 
+    box-shadow: 0px 2px 3px 1px #000000;
+    margin: 10px;
+    z-index: 100;
+}
+
+/* Specialization image portion of box */
+#select-speciality .spec-box .spec-box-img {    
+    height: 50%;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+/* Specialization text portion of box */
+#select-speciality .spec-box .spec-box-text {   
+    margin: 3px auto 0 auto;
+    text-align:center;
+    width: 90%;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Specialization link portion of box */
+#select-speciality .spec-box a {                
+    text-decoration: none;
+    color:#ffffff;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #000000;
+    border: 3px solid #4e4e4e;
+    padding: 15px 12px;
+    border-radius: 5px;
+}
+
+/* Specialization link positioning */
+#select-speciality .spec-box .spec-box-link {
+    margin-top: 35px;
+}
+
+/* Specialization text description display */
+.description {
+    display: flex;
+}
+
+/* Pseudo classes */
+a:link, a:visited {
+    color:#ffffff
+}
+
+nav ul li a:hover {
+    color: aqua;
+    background-color: #3b3b3b;
+
+}
+
+#select-speciality .spec-box a:hover {
+    color: aqua;
+    background-color: #3b3b3b;
+}
+
+
+/* Mobile menu close button CSS */
+#mobile-close {
+    display: none;
+    width: fit-content;
+    padding: 10px;
+    margin: 10px 0 0 0;
+    position: absolute;
+    color: #ffffff;
+    transform: scale(2);
+    top: 0;
+    right: 5%;
+    cursor: pointer;
+}
+
+/* Mobile menu burger menu */
+#mobile-menu {
+    display: none;
+    color:#ffffff;    
+    float: right;
+    right: 0;
+    padding: 10px;
+}
+
+/* Keyframes */
+/* Swap images in welcome section */
+@keyframes swapImages {     
+    0% {
+        background-image: url("images/raw_images/klimatyzacja.jpg");
+    }
+
+    25% {
+        background-image: url("images/raw_images/ogrzewnictwo.jpg");
+    }
+
+    50% {
+        background-image: url("images/raw_images/instalacja_wody2.jpg");
+    }
+
+    75% {
+        background-image: url("images/raw_images/instalacja_gazowa2.jpg");
+    }
+
+    100% {
+        background-image: url("images/raw_images/klimatyzacja.jpg");
+    }
+}
+
+/* Media queries */
+
+/* Change logo text size */
+@media screen and (max-width: 250px) {
+    #logo #logo-text {
+        display: none;
+    }
+}
+
+/* Change logo text size */
+@media screen and (max-width: 330px) {
+    #logo a {
+        font-size: 20px;
+    }
+}
+
+/* Change <h1> size */
+@media screen and (max-width: 350px) {
+    h1 {
+        width: 100%;
+        font-size: 150%;
+    }
+}
+
+/* Change specialization box size */
+@media screen and (max-width: 360px) {
+    #select-speciality .spec-box {
+        transform: scale(.8);
+        margin: 2px;
+    }  
+}
+
+/* Change navigation bar to mobile menu */
+@media screen and (max-width: 800px) {
+    #mobile-menu {
+        display: block;
+    }
+
+    #nav-links {
+        flex-direction: column;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        background-color: #000000c9;
+    }
+
+    nav ul li {
+        width: 100vw;
+        margin: 25px 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        padding: 25px 10vw;
+        font-size: 150%;
+    }
+
+    nav ul li a:hover {
+        color: aqua;
+        background-color: none;
+    }
+
+    #mobile-close {
+        display: block;
+    }
+
+    /* Mobile menu open animation */
+    @keyframes mobile-slide-open {
+        0% {
+            top:-1000px;
+        }
+
+        100% {
+            top: 0;
+        }
+    }
+
+    /* Mobile menu close animation */
+    @keyframes mobile-slide-close {
+        0% {
+            top:0;
+        }
+
+        100% {
+            top: -1000px;
+        }
+    }
+}
+
+
+/* Calculators css */
+
+h1 {
+    margin-bottom: 40px;
+    width: 80%;
+}
+
+h4 {
+    margin-bottom: -10px;
+    font-size: 120%;
+}
+
+/* Round and square duct box */
+.round-ducts, .square-ducts {
+    display: block;
+    justify-content: center;
+    width: 60vw;
+    height: fit-content;
+    background-color:#ffffff;
+    border-radius: 10px;
+    margin: 4vh auto;
+    border: 5px double #000000;
+    -webkit-box-shadow: 0px 2px 3px 1px #000000; 
+    box-shadow: 0px 2px 3px 1px #000000;
+}
+
+/* Form field box */
+.field {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+/* Input fields */
+.input-field {
+    display: flex;
+    float: right;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    font-weight: bold;
+    flex-wrap: wrap;
+}
+
+/* Form container */
+#container {
+    display: block;
+    height: fit-content;
+    width: fit-content;
+    background-color: #ffffff;
+    margin: 2vw auto;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 30px;
+    -webkit-box-shadow: 0px 2px 3px 1px #000000; 
+    box-shadow: 0px 2px 3px 1px #000000;
+    z-index: 100;
+}
+
+#gas-results, #square-vent-results, #round-vent-results {
+    display: none;
+    text-align: left;
+    font-weight: bold;
+    border: 5px double #000000;
+}
+
+#gas-results p, #square-vent-results p, #round-vent-results p{
+    margin: 5px;
+    line-height: 20px;
+}
+
+.red-text {
+    color: #D32F2F !important;
+}
+
+/* Display items as a grid with even rows and columns */
+#appliance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin: 5px;
+    grid-auto-rows: minmax(40px, auto);
+}
+
+/* Water supply results box */
+#appliance-result {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: fit-content;
+    clear: both;
+    border: 5px double #000000;
+    border-radius: 5px;
+}
+
+/* Water supply results <p> */
+#appliance-result p {
+    margin: 10px auto;
+    padding: 0 5px;
+    display: flex;
+    flex-wrap: nowrap;
+    font-weight: bold;
+}
+
+/* Remove up/down arrows from number input fields */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Input box CSS changes */
+input[type=number] {
+    border: none;
+    border-bottom: 2px solid #000000;
+    height: 30px;
+    width: 100px;
+    margin-left: 5px;
+    text-align: center;
+    font-size: 16px;
+    transition: .2s ease-out;
+}
+
+/* Input box CSS changes on focus */
+input[type=number]:focus {
+    border: none;
+    text-align: center;
+    outline: none;
+    border-bottom: 2px solid aqua;
+    transition: .2s ease-in;
+}
+
+/* Selection box CSS changes */
+#fluids, #heat-pipes, #water-pipes, #buildings, #heat-fluid {
+    margin-left: 5px;
+    height: 30px;
+    max-width: 10vw;
+    min-width: 100px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    text-align: center;
+    border-bottom: 2px solid #000000;
+    transition: .2s ease-out;
+    font-family: 'Trispace', sans-serif;
+}
+
+/* Selection box Underline */
+#fluids:focus, #heat-pipes:focus, #water-pipes:focus, #buildings:focus, #heat-fluid:focus {
+    border-bottom: 2px solid aqua;
+    transition: .2s ease-in;
+    text-align: left;
+}
+
+/* Add border to form container when screen width <= 620px */
+@media screen and (max-width: 620px) {
+    #container {
+        border: 3px solid #000000;
+        box-shadow: none;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #appliance-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #appliance-grid {
+        grid-template-columns: 1fr;
+    }
+}
+

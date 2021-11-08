@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Gas calculator</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="HVAC Calculator">
+    <meta name="keywords" content="Jacob, Lewandowski, HVAC, Calculator, engineering, Engineer, Heating, Water supply, Water, Gas, AC, Air conditioning">
+    <meta name="author" content="Jacob Lewandowski">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@300&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" 
+    integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link rel="icon" href="images/hvac_calculator_logo_white.png">
+</head>
+<body>
+    <nav>   <!-- Navigation bar section - Start -->
+        <!-- Logo and app name -->
+        <div id="logo">
+            <a href="index.html"><img src="images/hvac_calculator_logo_white.png" id="logo-image"></a>
+            <a href="index.html" id="logo-text">HVAC Calculator</a>
+        </div>
+
+        <!-- Mobile menu burger bars -->
+        <div id="mobile-menu">
+            <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+        </div>
+        
+        <!-- Navigation bar links -->
+        <ul id="nav-links">
+
+            <!-- Close mobile menu button -->
+            <li id="mobile-close">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </li>
+
+            <li>
+                <a href="heating.html">Heating</a>
+            </li>
+
+            <li>
+                <a href="water_supply.html">Water supply</a>
+            </li>
+
+            <li>
+                <a href="gas.html">Gas</a>
+            </li>
+
+            <li>
+                <a href="ventilation.html">Air conditioning</a>
+            </li>
+        </ul>
+    </nav> <!-- Navigation bar section - End -->
+
+    <main> <!-- Main Section - Start -->
+
+        <!-- Main section welcoming text -->
+        <h1>Gas calculator</h1>
+        
+        <!-- Welcome sign image, stop animation -->
+        <div id="welcome-sign" style="background-image: url('images/raw_images/instalacja_gazowa2.jpg'); animation: none;">
+            <img src="images/raw_images/instalacja_gazowa2.jpg" style="display: none;"> 
+        </div> 
+
+        <!-- Calculation form container -->
+        <div id="container">
+            <!-- First calculation form - gas pipe diameters -->
+            <h4>Automatic selection of gas pipe diameters</h4>
+
+            <div class="round-ducts">
+                <form name="gas-pipe-calculations" id="gas-pipe-calculations">
+                    <p>Please enter your calculated gas flow below:</p>
+                    <div class="field">
+                        
+                        <!-- Gas flow input-->
+                        <div class="input-field">
+                            <p>Gas flow [m<sup>3</sup>/h]</p>
+                            <input type="number" name="gas-hourly-flow" min="0" id="gas-hourly-flow" onclick="this.select();" onkeyup="gasFlowPipeCalculation()">
+                        </div>
+                        
+                        <!-- Gas appliances power -->
+                        <div class="input-field">
+                            <p>Gas appliances power [kW]</p> 
+                            <input type="number" name="gas-power" min="0" id="gas-power" onclick="this.select();" onkeyup="gasPowerPipeCalculation()">
+                        </div>
+                    </div>
+                </form>
+                <div id="gas-results">
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Javascript section-->
+    <script src="javascript.js"></script>
+</body>
+</html>

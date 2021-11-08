@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HVAC Calculator</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="HVAC Calculator">
+        <meta name="keywords" content="Jacob, Lewandowski, HVAC, Calculator, engineering, Engineer, Heating, Water supply, Water, Gas, AC, Air conditioning">
+        <meta name="author" content="Jacob Lewandowski">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link href="style.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@300&display=swap" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" 
+        integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+        <link rel="icon" href="images/hvac_calculator_logo_white.png">
+    </head>
+
+    <body>
+        <!-- Navigation bar section - Start -->
+        <nav>   
+            <!-- Logo and app name -->
+            <div id="logo">
+                <a href="index.html"><img src="images/hvac_calculator_logo_white.png" id="logo-image"></a>
+                <a href="index.html" id="logo-text">HVAC Calculator</a>
+            </div>
+
+            <!-- Mobile menu burger bars -->
+            <div id="mobile-menu">
+                <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+            </div>
+            
+            <!-- Navigation bar links -->
+            <ul id="nav-links" class="slide-menu">
+                
+                <!-- Close mobile menu button -->
+                <li id="mobile-close">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </li>
+
+                <li>
+                    <a href="heating.html">Heating</a>
+                </li>
+
+                <li>
+                    <a href="water_supply.html">Water supply</a>
+                </li>
+
+                <li>
+                    <a href="gas.html">Gas</a>
+                </li>
+
+                <li>
+                    <a href="ventilation.html">Air conditioning</a>
+                </li>
+            </ul>
+        </nav> <!-- Navigation bar section - End -->
+
+        <main> <!-- Main Section - Start -->
+            <!-- Main section welcoming text -->
+            <h1>HVAC Engineering Calculator</h1>
+            <h3>The fastest and easiest way to help complete your projects</h3>
+
+            <!-- Main page image - Start-->
+            <div id="welcome-sign"> 
+                <!-- Preloaded images to avoid flickering-->
+                <img src="images/raw_images/instalacja_wentylacji.jpg" style="display: none;"> 
+                <img src="images/raw_images/ogrzewnictwo.jpg" style="display: none;">
+                <img src="images/raw_images/instalacja_wody2.jpg" style="display: none;"> 
+                <img src="images/raw_images/instalacja_gazowa2.jpg" style="display: none;"> 
+            </div> <!-- Main page image - End-->
+
+            <!-- Specialization selection section - Start -->
+            <div id="select-speciality"> 
+
+                <!-- Specialization box 1 - Heating -->
+                <div class="spec-box"> 
+
+                    <!-- Specialization box image section -->
+                    <div class="spec-box-img"> 
+                        <img src="images/raw_images/grzejnik_link2.jpg">
+                    </div>
+
+                    <!-- Specialization box description section -->
+                    <div class="spec-box-text"> 
+                        <p> Select the diameter based on flow. Calculate the 
+                            flow and diameters based on the reported power and temp. difference.
+                        </p>
+                    </div>
+
+                    <!-- Specialization 1 calculator link button-->
+                    <div class="spec-box-link">
+                        <a href="heating.html">Use calculator</a> 
+                    </div>
+                </div>
+
+                <!-- Specialization box 2 - Water supply -->
+                <div class="spec-box"> 
+
+                    <!-- Specialization box image section -->
+                    <div class="spec-box-img"> 
+                        <img src="images/raw_images/woda_link2.jpg">
+                    </div>
+
+                    <div class="spec-box-text"> 
+                        <p> Automatic selection of diameters of water pipes based on the sum of 
+                            normative outflows and the calculated flow.
+                        </p>
+                    </div>
+
+                    <!-- Specialization 2 calculator link button-->
+                    <div class="spec-box-link">
+                        <a href="water_supply.html">Use calculator</a> 
+                    </div>
+                </div>
+
+                 <!-- Specialization box 3 - Gas -->
+                <div class="spec-box">
+
+                    <!-- Specialization box image section -->
+                    <div class="spec-box-img"> 
+                        <img src="images/raw_images/gaz_link2.jpg">
+                    </div>
+
+                    <!-- Specialization box description section -->
+                    <div class="spec-box-text"> 
+                        <p> Convert the power of gas appliances to flow value. Determine
+                            the pressure drop in the pipes and select the diameter.
+                        </p>
+                    </div>
+
+                    <!-- Specialization 3 calculator link button-->
+                    <div class="spec-box-link">
+                        <a href="gas.html">Use calculator</a> 
+                    </div>
+                </div>
+
+                <!-- Specialization box 4 - Ventilation -->
+                <div class="spec-box"> 
+
+                    <!-- Specialization box image section -->
+                    <div class="spec-box-img"> 
+                        <img src="images/raw_images/klimatyzacja_link2.jpg">
+                    </div>
+
+                    <!-- Specialization box description section -->
+                    <div class="spec-box-text"> 
+                        <p> Automatic selection of Spiro ventilation ducts based on the given 
+                            air flow. Calculate the speed in a rectangular channel.
+                        </p>
+                    </div>
+
+                    <!-- Specialization 4 calculator link button-->
+                    <div class="spec-box-link">
+                        <a href="ventilation.html">Use calculator</a> 
+                    </div>
+                </div>
+            </div> <!-- Specialization selection section - End -->
+
+        </main>
+        <!-- Main Section - End -->
+        
+        <!-- Javascript section-->
+        <script src="javascript.js"></script>
+    </body>
+</html>
