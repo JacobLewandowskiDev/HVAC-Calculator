@@ -24,4 +24,34 @@ flow, the pipe diameter and the speed of the water flow by inputing the number o
 * Ventilation calculator - The user can use the air conditioning calculator to determine the air duct diameter (round or square) by 
 inputting the required air flow.
 
+### HVAC calculator - Main page
+![](Screenshots/Hvac-main.png)
+
+### HVAC calculator - Gas calculator
+![](Screenshots/Hvac-Gas.png)
+
+### HVAC calculator - Calculated Gas
+![](Screenshots/Hvac-Gas-calculated.png)
+
+### HVAC calculator - Heating calculator
+![](Screenshots/Hvac-Heating.png)
+
+### HVAC calculator - Calculated Heat
+![](Screenshots/Hvac-Heating-calculated.png)
+
+### HVAC calculator - Water supply calculator
+![](Screenshots/Hvac-Water.png)
+
+### HVAC calculator - Calculated Water supply
+![](Screenshots/Hvac-Water-calculated.png)
+
+### HVAC calculator - Ventilation calculator
+![](Screenshots/Hvac-Ventilation.png)
+
+### HVAC calculator - Calculated Ventilation
+![](Screenshots/Hvac-Ventilation - calculated.png)
+
+
+
+
 
