@@ -49,7 +49,7 @@ inputting the required air flow.
 ![](Screenshots/Hvac-Ventilation.png)
 
 ### HVAC calculator - Calculated Ventilation
-![](Screenshots/Hvac-Ventilation - calculated.png)
+![](Screenshots/Hvac-Ventilation-calculated.png)
 
 
 
