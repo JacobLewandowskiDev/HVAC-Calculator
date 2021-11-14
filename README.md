@@ -1,16 +1,16 @@
-# HVAC-Calculator
+  # HVAC-Calculator
 
 As a environmental engineer I figured I'd create a online calculator that helps with the tedious portion of creating an HVAC project. 
 This particular app alows it's users to calculate the pipe/air duct diameters and sizes in 4 different specializations 
 (Heating, Ventilation, Water supply and gas supply). The techstack used to build this app: HTML, CSS and JavaScript.
 
-### How to use the app
+  ### How to use the app
 1. Download the files
 2. Run the index.html
 3. Select the calculator in which you want to use
 4. Input the required data for the calculator to work it's magic
 
-### User features
+  ### User features
 * Gas pipe calculator - The user can use the gas calculator to determine the gas flow or appliance power depending on which value was inputted. 
 Besides this the calculator returns an array of nominal pipe diameters that can be used at this section of the project along with the pressure 
 drops and gas flow speed [m/s].
@@ -24,7 +24,7 @@ flow, the pipe diameter and the speed of the water flow by inputing the number o
 * Ventilation calculator - The user can use the air conditioning calculator to determine the air duct diameter (round or square) by 
 inputting the required air flow.
 
-# The user UI:
+  # The user UI:
 
 ### HVAC calculator - Main page
 ![](Screenshots/Hvac-main.png)
